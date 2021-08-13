@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: front
+  name: front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front
+  template:
+    metadata:
+      labels:
+        app: front
+    spec:
+      containers:
+      - image: "{{ .Values.frontImageName }}:{{ .Values.frontImageTag }}"
+        name: front
+        env:
+        - name: INITDB
+          value: "true"
+      nodeSelector:
+        type: web

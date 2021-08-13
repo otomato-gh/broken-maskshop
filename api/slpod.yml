@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2021-05-04T11:47:01Z"
+  labels:
+    run: sl
+  name: sl
+  namespace: default
+spec:
+  containers:
+  - image: otomato.jfrog.io/docker/loopsl
+    name: sl
+  imagePullSecrets:
+    - name: otomato
