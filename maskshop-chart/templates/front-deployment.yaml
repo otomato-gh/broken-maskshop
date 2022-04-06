@@ -20,5 +20,3 @@ spec:
         env:
         - name: INITDB
           value: "true"
-      nodeSelector:
-        type: web
